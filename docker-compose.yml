@@ -11,7 +11,8 @@ services:
       DATABASE_URL: postgresql://postgres:postgres@db:5432/people_flow_db
 
     depends_on:
-      - db
+      db:
+        condition: service_healthy
 
   db:
     image: postgres:16
@@ -21,9 +22,15 @@ services:
     restart: always
 
     environment:
-      POSTGRES_DB: employees_db
+      POSTGRES_DB: people_flow_db
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
+
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d people_flow_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
 
     volumes:
       - postgres_data:/var/lib/postgresql/data
