@@ -137,13 +137,13 @@ http://localhost:8000
 Run the full test suite:
 
 ```bash
-pytest
+python -m pytest
 ```
 
 Verbose output:
 
 ```bash
-pytest -v
+python -m pytest -v
 ```
 
 ---
