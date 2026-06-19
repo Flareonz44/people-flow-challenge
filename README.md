@@ -37,13 +37,13 @@ Once the application is running:
 Swagger UI:
 
 ```text
-http://localhost:8000/docs
+http://127.0.0.1:8000/docs
 ```
 
 ReDoc:
 
 ```text
-http://localhost:8000/redoc
+http://127.0.0.1:8000/redoc
 ```
 
 ---
@@ -59,7 +59,7 @@ docker compose up --build
 The API will be available at:
 
 ```text
-http://localhost:8000
+http://127.0.0.1:8000
 ```
 
 ### Stop containers
